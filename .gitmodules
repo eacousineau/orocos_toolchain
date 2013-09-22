@@ -1,32 +1,32 @@
 [submodule "rtt"]
 	path = rtt
-	url = ./rtt
+	url = ../rtt.git
 	branch = feature/local
 [submodule "ocl"]
 	path = ocl
-	url = ./ocl
+	url = ../ocl.git
 	branch = feature/local
 [submodule "orogen"]
 	path = orogen
-	url = ./orogen
+	url = ../orogen.git
 	branch = feature/local
 [submodule "typelib"]
 	path = typelib
-	url = ./typelib
+	url = ../typelib.git
 	branch = feature/local
 [submodule "utilmm"]
 	path = utilmm
-	url = ./utilmm
+	url = ../utilmm.git
 	branch = feature/local
 [submodule "utilrb"]
 	path = utilrb
-	url = ./utilrb
+	url = ../utilrb.git
 	branch = feature/local
 [submodule "log4cpp"]
 	path = log4cpp
-	url = ./log4cpp
+	url = ../log4cpp.git
 	branch = feature/local
 [submodule "rtt_typelib"]
 	path = rtt_typelib
-	url = ./rtt_typelib
+	url = ../rtt_typelib.git
 	branch = feature/local
