@@ -1,0 +1,231 @@
+$ bloom-release --rosdistro groovy --track groovy orocos_toolchain --edit
+Specified repository 'orocos_toolchain' is not in the release file located at 'https://raw.github.com/ros/rosdistro/master/groovy/release.yaml'
+Did you mean one of these: 'orocos_kdl'?
+Could not determine release repository url for repository 'orocos_toolchain' of distro 'groovy'
+You can continue the release process by manually specifying the location of the RELEASE repository.
+To be clear this is the url of the RELEASE repository not the upstream repository.
+Release repository url [press enter to abort]: /home/eacousineau/proj/tmp/bloom/orocos_toolchain-release
+==> Fetching 'orocos_toolchain' repository from '/home/eacousineau/proj/tmp/bloom/orocos_toolchain-release'
+Cloning into '/tmp/tmpnlvVE3'...
+done.
+
+Creating track 'groovy'...
+Repository Name:
+  upstream
+    Default value, leave this as upstream if you are unsure
+  <name>
+    Name of the repository (used in the archive name)
+  ['upstream']: Upstream Repository URI:
+  <uri>
+    Any valid URI. This variable can be templated, for example an svn url
+    can be templated as such: "https://svn.foo.com/foo/tags/foo-:{version}"
+    where the :{version} token will be replaced with the version for this release.
+  [None]: /home/eacousineau/catkin/isolated_ws/src/orocos_toolchain
+Upstream VCS Type:
+  svn
+    Upstream URI is a svn repository
+  git
+    Upstream URI is a git repository
+  hg
+    Upstream URI is a hg repository
+  tar
+    Upstream URI is a tarball
+  ['git']: 
+Version:
+  :{ask}
+    This means that the user will be prompted for the version each release.
+    This also means that the upstream devel will be ignored.
+  :{auto}
+    This means the version will be guessed from the devel branch.
+    This means that the devel branch must be set, the devel branch must exist,
+    and there must be a valid package.xml in the upstream devel branch.
+  <version>
+    This will be the version used.
+    It must be updated for each new upstream version.
+  [':{auto}']: 
+Release Tag:
+  :{none}
+    For svn and tar only you can set the release tag to :{none}, so that
+    it is ignored.  For svn this means no revision number is used.
+  :{ask}
+    This means the user will be prompted for the release tag on each release.
+  :{version}
+    This means that the release tag will match the :{version} tag.
+    This can be further templated, for example: "foo-:{version}" or "v:{version}"
+    
+    This can describe any vcs reference. For git that means {tag, branch, hash},
+    for hg that means {tag, branch, hash}, for svn that means a revision number.
+    For tar this value doubles as the sub directory (if the repository is
+    in foo/ of the tar ball, putting foo here will cause the contents of
+    foo/ to be imported to upstream instead of foo itself).
+  [':{version}']: v:{version}
+Upstream Devel Branch:
+  <vcs reference>
+    Branch in upstream repository on which to search for the version.
+    This is used only when version is set to ':{auto}'.
+  [None]: 
+ROS Distro:
+  <ROS distro>
+    This can be any valid ROS distro, e.g. groovy, hydro
+  ['groovy']: 
+Patches Directory:
+  :{none}
+    Use this if you want to disable overlaying of files.
+  <path in bloom branch>
+    This can be any valid relative path in the bloom branch. The contents
+    of this folder will be overlaid onto the upstream branch after each
+    import-upstream.  Additionally, any package.xml files found in the
+    overlay will have the :{version} string replaced with the current
+    version being released.
+  [None]: 
+Release Repository Push URL:
+  :{none}
+    This indicates that the default release url should be used.
+  <url>
+    (optional) Used when pushing to remote release repositories. This is only
+    needed when the release uri which is in the rosdistro file is not writable.
+    This is useful, for example, when a releaser would like to use a ssh url
+    to push rather than a https:// url.
+  [None]: 
+Created 'groovy' track.
+==> Testing for push permission on release repository
+==> git remote -v
+origin	/home/eacousineau/proj/tmp/bloom/orocos_toolchain-release (fetch)
+origin	/home/eacousineau/proj/tmp/bloom/orocos_toolchain-release (push)
+==> git push --dry-run
+To /home/eacousineau/proj/tmp/bloom/orocos_toolchain-release
+   ec33998..bf62c4c  master -> master
+==> Releasing 'orocos_toolchain' using release track 'groovy'
+==> git-bloom-release groovy
+Processing release track settings for 'groovy'
+Checking upstream devel branch for package.xml(s)
+Cloning into '/tmp/tmp3LfB5n/upstream'...
+done.
+Submodule 'log4cpp' (/home/eacousineau/catkin/isolated_ws/src/orocos_toolchain/log4cpp) registered for path 'log4cpp'
+
+Submodule 'ocl' (/home/eacousineau/catkin/isolated_ws/src/orocos_toolchain/ocl) registered for path 'ocl'
+
+Submodule 'orogen' (/home/eacousineau/catkin/isolated_ws/src/orocos_toolchain/orogen) registered for path 'orogen'
+
+Submodule 'rtt' (/home/eacousineau/catkin/isolated_ws/src/orocos_toolchain/rtt) registered for path 'rtt'
+
+Submodule 'rtt_typelib' (/home/eacousineau/catkin/isolated_ws/src/orocos_toolchain/rtt_typelib) registered for path 'rtt_typelib'
+
+Submodule 'typelib' (/home/eacousineau/catkin/isolated_ws/src/orocos_toolchain/typelib) registered for path 'typelib'
+
+Submodule 'utilmm' (/home/eacousineau/catkin/isolated_ws/src/orocos_toolchain/utilmm) registered for path 'utilmm'
+
+Submodule 'utilrb' (/home/eacousineau/catkin/isolated_ws/src/orocos_toolchain/utilrb) registered for path 'utilrb'
+
+Cloning into 'log4cpp'...
+
+done.
+
+Submodule path 'log4cpp': checked out 'c7c12dc96a1bece8d3e55db448e20c6d5201012b'
+
+Cloning into 'ocl'...
+
+done.
+
+Submodule path 'ocl': checked out 'c4ea4709a3ddd971d559e011cb2360468510a433'
+
+Cloning into 'orogen'...
+
+done.
+
+Submodule path 'orogen': checked out '3a883033e2e1a04994e16c54b4a7542de1171f26'
+
+Cloning into 'rtt'...
+
+done.
+
+Submodule path 'rtt': checked out '6d6a2dc518c71d027e0faf9dd6c617f56dd24eeb'
+
+Cloning into 'rtt_typelib'...
+
+done.
+
+Submodule path 'rtt_typelib': checked out '589563537615f9b68d4a78e1e4f20f75750054b8'
+
+Cloning into 'typelib'...
+
+done.
+
+Submodule path 'typelib': checked out 'f6a4e68325a83108ee981eb60a6f6bb17c59f5bc'
+
+Cloning into 'utilmm'...
+
+done.
+
+Submodule path 'utilmm': checked out '8216794fe445e619784e4406af6f016938032f82'
+
+Cloning into 'utilrb'...
+
+done.
+
+Submodule path 'utilrb': checked out '6eb217ba063df9bc4a5a83a9f5cb5b3a40d5b5dc'
+
+Looking for packages in 'feature/local-devel' branch... found 9 packages.
+Detected version '2.6.0' from package(s): ['ocl', 'orocos_toolchain', 'typelib', 'utilrb', 'rtt', 'utilmm', 'orogen', 'log4cpp', 'rtt_typelib']
+
+Executing release track 'groovy'
+==> bloom-export-upstream /tmp/tmp3LfB5n/upstream git --tag v2.6.0 --display-uri /home/eacousineau/catkin/isolated_ws/src/orocos_toolchain --name upstream --output-dir /tmp/tmpBGdVXf
+Checking out repository at '/home/eacousineau/catkin/isolated_ws/src/orocos_toolchain' to reference 'v2.6.0'.
+Exporting to archive: '/tmp/tmpBGdVXf/upstream-v2.6.0.tar.gz'
+md5: ab4ff3261b68ba61c3bfa0fd8752d16e
+
+==> git-bloom-import-upstream /tmp/tmpBGdVXf/upstream-v2.6.0.tar.gz  --release-version 2.6.0 --replace
+Creating upstream branch.
+Importing archive into upstream branch...
+Creating tag: 'upstream/2.6.0'
+I'm happy.  You should be too.
+
+==> git-bloom-generate -y rosrelease groovy --source upstream -i 0
+Releasing package: ['orocos_toolchain']
+Releasing package 'orocos_toolchain' for 'groovy' to: 'release/groovy/orocos_toolchain'
+
+==> git-bloom-generate -y rosdebian --prefix release/groovy groovy -i 0
+Generating source debs for the packages: ['orocos_toolchain']
+Debian Incremental Version: 0
+Debian Distributions: ['oneiric', 'precise', 'quantal']
+Releasing for rosdistro: groovy
+Placing debian template files into 'debian/groovy/orocos_toolchain' branch.
+==> Placing templates files in the 'debian' folder.
+Running 'rosdep update'...
+
+####
+#### Generating 'oneiric' debian for package 'orocos_toolchain' at version '2.6.0-0'
+####
+Generating debian for oneiric...
+No homepage set, defaulting to ''
+Could not resolve rosdep key 'rtt'
+Try to resolve the problem with rosdep and then continue.
+Continue [Y/n]? n
+Traceback (most recent call last):
+  File "/home/eacousineau/catkin/isolated_ws/src/bloom/scripts/git-bloom-generate", line 24, in <module>
+    sys.exit(main() or 0)
+  File "/home/eacousineau/catkin/isolated_ws/src/bloom/bloom/commands/git/generate.py", line 247, in main
+    run_generator(generator, args)
+  File "/home/eacousineau/catkin/isolated_ws/src/bloom/bloom/commands/git/generate.py", line 162, in run_generator
+    gen.post_rebase, destination)
+  File "/home/eacousineau/catkin/isolated_ws/src/bloom/bloom/commands/git/generate.py", line 101, in try_execute
+    retcode = func(*args, **kwargs)
+  File "/home/eacousineau/catkin/isolated_ws/src/bloom/bloom/generators/debian/generator.py", line 502, in post_rebase
+    data = self.generate_debian(package, distro)
+  File "/home/eacousineau/catkin/isolated_ws/src/bloom/bloom/generators/debian/generator.py", line 622, in generate_debian
+    subs = self.get_subs(package, debian_distro, releaser_history)
+  File "/home/eacousineau/catkin/isolated_ws/src/bloom/bloom/generators/rosdebian.py", line 84, in get_subs
+    fallback_resolver=fallback_resolver
+  File "/home/eacousineau/catkin/isolated_ws/src/bloom/bloom/generators/debian/generator.py", line 262, in generate_substitutions_from_package
+    peer_packages, fallback_resolver)
+  File "/home/eacousineau/catkin/isolated_ws/src/bloom/bloom/generators/common.py", line 158, in resolve_dependencies
+    peer_packages, retry=True)
+  File "/home/eacousineau/catkin/isolated_ws/src/bloom/bloom/generators/common.py", line 134, in resolve_rosdep_key
+    .format(key))
+  File "/home/eacousineau/catkin/isolated_ws/src/bloom/bloom/generators/common.py", line 181, in exit
+    raise GeneratorError(retcode)
+GeneratorError: Error running generator: Failed to resolve rosdep key 'rtt', aborting.
+
+<== Error running command '['/home/eacousineau/catkin/isolated_ws/src/bloom/scripts/git-bloom-generate', '-y', 'rosdebian', '--prefix', 'release/groovy', 'groovy', '-i', '0']'
+Release failed, exiting.
+Removing temporary files
